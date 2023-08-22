@@ -2,7 +2,8 @@ import CustomCursor from "@/components/CustomCursor/CustomCursor";
 import "./globals.css";
 import { Inter, Raleway } from "next/font/google";
 import SideNavbar from "@/components/SideNavbar/SideNavbar";
-import { ThemeProvider } from "./ThemeContext";
+import { ThemeProvider } from "./ThemeProvider";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher/ThemeSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 const raleway = Raleway({
@@ -24,17 +25,19 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=optional"
         />
       </head>
-      <ThemeProvider>
-      <body className={`${raleway.className} flex flex-row items-start`}>
-        <CustomCursor />
-        <SideNavbar />
-        <main
-          className={`${inter.className} pl-8 md:pl-16 pb-16 w-full h-screen overflow-y-auto`}
-        >
-          {children}
-        </main>
+
+      <body className={`${inter.className} flex flex-row items-start`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeSwitcher />
+          <CustomCursor />
+          <SideNavbar />
+          <main
+            className={`${inter.className} pl-8 md:pl-16 pb-16 w-full h-screen overflow-y-auto dark:bg-dark dark:text-white transition-all duration-300 ease-in-out`}
+          >
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
-      </ThemeProvider>
     </html>
   );
 }
