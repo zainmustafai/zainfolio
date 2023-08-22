@@ -49,14 +49,14 @@ const HomePage = () => {
       </div>
       <div className="text-center ">
         <h1 className=" text-3xl md:text-4xl font-bold  dark:text-white ">
-          Hello I&apos;m{" "}
+          Hello I&apos;m &nbsp;
           <span className="text-primary dark:text-primary  ">
             Muhammad Zain Ul Abidin.
           </span>
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mt-4 text-2xl">
-          I&apos;m a freelance react developer. I can provide clean code and pixel
-          perfect design.
+          I&apos;m a freelance react developer. I can provide clean code and
+          pixel perfect design.
         </p>
 
         <section className="flex justify-center items-center mt-8 text-lg">
