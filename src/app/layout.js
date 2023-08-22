@@ -15,10 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=optional"
-        />
+        /> */}
       </head>
 
       <body className={`${inter.className} flex flex-row items-start`}>
@@ -29,7 +29,8 @@ export default function RootLayout({ children }) {
           <main
             className={`${inter.className} pl-8 md:pl-16 pb-16 w-full h-screen overflow-y-auto dark:bg-dark dark:text-white transition-all duration-300 ease-in-out`}
           >
-            <div className="container">{children}</div>
+            
+            {children}
           </main>
         </ThemeProvider>
       </body>

@@ -28,14 +28,14 @@ const AboutPage = () => {
             .
           </h1>
           <p className="text-sm md:text-base lg:text-lg xl:text-xl mt-4 lg:text-justify ">
-            I'm an IT graduate from Jhelum, Pakistan, passionate about website
+            I&apos;m an IT graduate from Jhelum, Pakistan, passionate about website
             creation and skilled in React JS. Excited to work as a React
             Developer, I transitioned from Graphic Design on fiverr.com in 2019
             to programming and web development. Learning through YouTube and
             online resources, I completed several projects and my final year
-            project using MERN Stack. I'm enthusiastic about React and web app
+            project using MERN Stack. I&quot;m enthusiastic about React and web app
             development, plus I enjoy working with databases and APIs.
-            Proficient in HTML, CSS, JavaScript, and React JS, I'm well-equipped
+            Proficient in HTML, CSS, JavaScript, and React JS, I&quot;m well-equipped
             for the role, ready to contribute, and eager to tackle challenges
             with enthusiasm.
           </p>

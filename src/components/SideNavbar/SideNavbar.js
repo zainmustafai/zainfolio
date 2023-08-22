@@ -18,7 +18,7 @@ const Sidenav = ({ isOpen, onClose }) => {
 
   const [activeItem, setActiveItem] = useState("home");
   return (
-    <aside className="flex-col justify-between h-screen dark:bg-dark bg-white  text-black dark:text-white transition-all duration-300 ease-in-out border-r hidden md:flex  ">
+    <aside className="flex-col justify-between h-screen dark:bg-black bg-white  text-black dark:text-white transition-all duration-300 ease-in-out border-r hidden md:flex  ">
       <button
         onClick={openSideNavbar}
         className="p-4 bg-gray-900 text-white fixed top-8 right-4 z-[123] md:translate-x-0 translate-x-full md:hidden"

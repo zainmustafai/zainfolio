@@ -8,8 +8,8 @@ const TestimonialSlide = () => {
       <div className="relative">
         <div className="mb-4 text-lg font-semibold ">Testimonial</div>
         <div className="dark:text-primary  italic">
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua&quot; 
         </div>
         <div className="mt-4">
           <Image
