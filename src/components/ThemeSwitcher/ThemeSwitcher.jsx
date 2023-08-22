@@ -17,11 +17,11 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      className={`w-fit absolute right-5 top-2 p-2 rounded-full hover:scale-110 active:scale-100 duration-200 bg-primary`}
+      className={`w-fit absolute right-5 top-2 p-2 rounded-full hover:scale-110 active:scale-100 duration-200 bg-primary opacity-30 hover:opacity-100`}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {/* {theme === "light" ? "Dark" : "Light"} */}
-      <ThemeSwitchIcon />
+      <ThemeSwitchIcon isDark={theme === "dark" ? true : false} />
     </button>
   );
 };
