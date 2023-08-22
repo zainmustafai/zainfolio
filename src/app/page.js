@@ -1,11 +1,10 @@
-import Image from "next/image";
-import Header from "./components/Header/Header";
+"use client";
+// import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-      <Header/>
-      <main className=""></main>
+    <div className="w-full">
+      <h1 className="text-4xl">Hello World</h1>
     </div>
   );
 }
