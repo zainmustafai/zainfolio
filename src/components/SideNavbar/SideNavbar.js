@@ -5,11 +5,10 @@ import { navLinks } from "../../data/Datafile";
 import Link from "next/link";
 import Image from "next/image";
 
-const Sidenav = ({ isOpen, onClose }) => {
-  const [isSideNavbarOpen, setIsSideNavbarOpen] = useState(true);
-
+const Sidenav = () => {
+  const [isSideNavbarOpen, setIsSideNavbarOpen] = useState(false); // Initialize as false
   const openSideNavbar = () => {
-    setIsSideNavbarOpen(!isSideNavbarOpen);
+    setIsSideNavbarOpen(true);
   };
 
   const closeSideNavbar = () => {
@@ -17,25 +16,30 @@ const Sidenav = ({ isOpen, onClose }) => {
   };
 
   const [activeItem, setActiveItem] = useState("home");
-  return (
-    <aside className="flex-col justify-between h-screen dark:bg-black bg-white  text-black dark:text-white transition-all duration-300 ease-in-out border-r hidden md:flex  ">
-      <button
-        onClick={openSideNavbar}
-        className="p-4 bg-gray-900 text-white fixed top-8 right-4 z-[123] md:translate-x-0 translate-x-full md:hidden"
-      >
-        Open
-      </button>
 
-      <ul
-        className={`flex flex-col text-center h-full max-h-screen overflow-y-auto w-[250px] `}
+  return (
+    <aside
+      className={`fixed z-50 md:block md:static ${
+        isSideNavbarOpen ? "top-0 left-0 " : "top-0 -left-full"
+      } min-h-screen max-h-screen justify-between w-[250px] overflow-y-auto overflow-x-hidden text-black dark:text-white border-lightGray dark:border-darkBlue border-r-2 dark:border-r-darkGray bg-white dark:bg-black 
+      transition-all duration-300 ease-in-out`}
+    >
+      <button
+        onClick={isSideNavbarOpen ? closeSideNavbar : openSideNavbar} // Toggle between open and close
+        className="p-4 bg-gray-900 block md:hidden text-white fixed top-8 right-4 z-50"
       >
-        <figure className="w-full aspect-square border-b dark:border-dark p-6">
-          <Image
-            src={profileImage}
-            alt="profile"
-            className="w-full h-full rounded-full border-[8px]  dark:border-dark grayscale hover:grayscale-0 transition-all duration-300 ease-in-out  "
-          />
-        </figure>
+        {isSideNavbarOpen ? "Close" : "Open"}
+      </button>
+      <figure className="w-full aspect-square border-b dark:border-dark p-6">
+        <Image
+          src={profileImage}
+          alt="profile"
+          className="w-full  rounded-full border-8 dark:border-dark grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+        />
+      </figure>
+
+      {/*Map through the navLinks array and render the links*/}
+      <ul className="flex flex-col flex-1 text-center text-sm">
         {navLinks.map((item, index) => (
           <li
             key={index}
@@ -43,21 +47,21 @@ const Sidenav = ({ isOpen, onClose }) => {
           >
             <Link
               onClick={() => setActiveItem(item.title.toLowerCase())}
-              href={`/${item.path} `}
+              href={`/${item.path}`}
               className={`
-              w-full h-full block py-2
-              ${
-                activeItem === item.title.toLocaleLowerCase()
-                  ? "text-primary text-lg hover:text-primary transition-colors duration-300 font-semibold "
-                  : "hover:text-primary font-semibold transition-colors duration-300 "
-              }`}
+                w-full  block py-2
+                ${
+                  activeItem === item.title.toLocaleLowerCase()
+                    ? "text-primary text-lg hover:text-primary transition-colors duration-300 font-semibold"
+                    : "hover:text-primary font-semibold transition-colors duration-300"
+                }`}
             >
               {item?.title?.toUpperCase()}
             </Link>
           </li>
         ))}
       </ul>
-      <footer className=" p-4 flex flex-col border-t text-center">
+      <footer className="p-4 flex flex-col border-t text-center">
         <span className="text-sm">
           Made with ❤️ by{" "}
           <a
