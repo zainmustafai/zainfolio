@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${inter.className} flex flex-row items-start`}>
+      <body className={`${inter.className} flex items-stretch`}>
         <Provider>
         <ThemeSwitcher />
         <CustomCursor />

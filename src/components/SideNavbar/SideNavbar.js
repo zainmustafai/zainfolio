@@ -19,30 +19,27 @@ const Sidenav = () => {
 
   return (
     <aside
-      className={`fixed z-50 md:block md:static ${
-        isSideNavbarOpen ? "top-0 left-0 " : "top-0 -left-full"
-      } min-h-screen max-h-screen justify-between w-[250px] overflow-y-auto overflow-x-hidden text-black dark:text-white border-lightGray dark:border-darkBlue border-r-2 dark:border-r-darkGray bg-white dark:bg-black 
+      className={`fixed z-50 flex flex-col md:static ${
+        isSideNavbarOpen ? "top-0 left-0 h-screen " : "top-0 -left-full"
+      }
+      max-h-screen w-[250px] overflow-y-auto overflow-x-hidden
+      
+      text-black dark:text-white border-lightGray dark:border-darkBlue border-r-2 dark:border-r-darkGray bg-white dark:bg-black 
       transition-all duration-300 ease-in-out`}
     >
-      <button
-        onClick={isSideNavbarOpen ? closeSideNavbar : openSideNavbar} // Toggle between open and close
-        className="p-4 bg-gray-900 block md:hidden text-white fixed top-8 right-4 z-50"
-      >
-        {isSideNavbarOpen ? "Close" : "Open"}
-      </button>
       <figure className="w-full aspect-square border-b dark:border-dark p-6">
         <Image
           src={profileImage}
           alt="Picture of the author"
           placeholder="blur"
-          style={{objectFit: "contain"}}
+          style={{ objectFit: "contain" }}
           loading="lazy"
-          className="rounded-full border-8 w-full h-full dark:border-dark grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+          className="rounded-full border-8 w-full aspect-square dark:border-dark grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
         />
       </figure>
 
       {/*Map through the navLinks array and render the links*/}
-      <ul className="flex flex-col flex-1 text-center text-sm">
+      <ul className="text-center flex-1">
         {navLinks.map((item, index) => (
           <li
             key={index}
@@ -64,7 +61,8 @@ const Sidenav = () => {
           </li>
         ))}
       </ul>
-      <footer className="p-4 flex flex-col border-t text-center">
+
+      <footer className="p-4 border-t text-center ">
         <span className="text-sm">
           Made with ❤️ by{" "}
           <a
@@ -74,49 +72,19 @@ const Sidenav = () => {
             Zain
           </a>{" "}
         </span>
+        <br />
         <span className="text-sm">© 2023 All rights reserved.</span>
       </footer>
+
+      {/* This button is only visible on mobile screens */}
+      <button
+        onClick={isSideNavbarOpen ? closeSideNavbar : openSideNavbar} // Toggle between open and close
+        className="p-4 opacity-25 bg-gray-900 block md:hidden text-white fixed top-8 right-4 z-50"
+      >
+        {isSideNavbarOpen ? "Close" : "Open"}
+      </button>
     </aside>
   );
 };
 
 export default Sidenav;
-
-// import React from "react";
-// import Link from "next/link";
-
-// const SideNavbar = ({ isOpen, onClose }) => {
-//   return (
-//     <div
-//       className={`fixed z-[9999] inset-y-0 left-0 w-60 duration-300 ease-in-out bg-dark text-primary transform transition-all ${
-//         isOpen ? "translate-x-0" : "-translate-x-full"
-//       }`}
-//     >
-//       <button onClick={onClose} className="absolute top-4 right-4 text-white">
-//         Close
-//       </button>
-//       <nav className="p-4">
-//         <ul className="space-y-4">
-//           <li>
-//             <Link href="/home">Home</Link>
-//           </li>
-//           <li>
-//             <Link href="/about">About</Link>
-//           </li>
-//           <li>
-//             <Link href="/resume">Resume</Link>
-//           </li>
-//           <li>
-//             <Link href="/portfolio">Portfolio</Link>
-//           </li>
-//           <li>
-//             <Link href="contact">Contact</Link>
-//           </li>
-//           {/* Add more links here */}
-//         </ul>
-//       </nav>
-//     </div>
-//   );
-// };
-
-// export default SideNavbar;

@@ -78,7 +78,7 @@ const HomePage = () => {
       </div>
 
       {/* LOGO */}
-      <a
+      {/* <a
         href="https://9724054718399.gumroad.com/l/reactifier-portfolio"
         target="_blank"
         rel="noreferrer"
@@ -93,7 +93,7 @@ const HomePage = () => {
             ~zain~
           </p>
         </div>
-      </a>
+      </a> */}
     </div>
   );
 };

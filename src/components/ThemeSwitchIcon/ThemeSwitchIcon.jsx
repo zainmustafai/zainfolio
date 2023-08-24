@@ -6,7 +6,7 @@ const ThemeSwitchIcon = ({ isDark, ...props }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 50 50"
       className={`w-6 h-6 ${
-        isDark ? "text-white" : "dark:text-black"
+        isDark ? "transform rotate-180" : ""
       } transition-all duration-300 ease-linear `}
       {...props}
     >
