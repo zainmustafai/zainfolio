@@ -8,7 +8,7 @@ import {
   MessageOutlined,
 } from "@ant-design/icons";
 // import ContactForm from "./components/ContactForm";
-const ICON_CLASSES =
+const ICON_CLASSES = 
   "text-2xl md:text-4xl pr-4 border-r py-10 border-lightGray dark:border-darkBlue text-primary";
 
 const ContactPage = () => {

@@ -4,7 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import SideNavbar from "@/components/SideNavbar/SideNavbar";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher/ThemeSwitcher";
-
+import Provider from "./ThemeProvider";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "NextFolio",
@@ -13,23 +13,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <head>
-        {/* <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=optional"
-        /> */}
+        <link rel="icon" href="/favicon.ico" />
       </head>
-
       <body className={`${inter.className} flex flex-row items-start`}>
+        <Provider>
         <ThemeSwitcher />
         <CustomCursor />
         <SideNavbar />
-        <main
-          className={`${inter.className} pl-8 md:pl-16 pb-16 w-full h-screen overflow-y-auto dark:bg-dark dark:text-white transition-all duration-300 ease-in-out`}
-        >
-          {children}
-        </main>
+          <main
+            className={`${inter.className} pl-8 md:pl-16 pb-16 w-full h-screen overflow-y-auto bg-light dark:bg-dark dark:text-white transition-all duration-300 ease-in-out`}
+          >
+            {children}
+          </main>
+        </Provider>
       </body>
     </html>
   );

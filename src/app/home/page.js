@@ -1,6 +1,7 @@
 import ParticlesComponent from "./components/ParticlesComponent";
 import Image from "next/image";
 import logo from "./reactifier-portfolio-logo.png";
+
 import {
   FacebookFilled,
   LinkedinFilled,
@@ -82,7 +83,7 @@ const HomePage = () => {
         target="_blank"
         rel="noreferrer"
       >
-        <div className=" w-16 md:w-10 aspect-square fixed bottom-4 right-4 z-50 rounded-ful -rotate-45 ">
+        <div className=" w-16 md:w-10 aspect-square fixed bottom-8 right-4 z-50 rounded-ful -rotate-45 ">
           <Image
             src={logo}
             alt="Logo"

@@ -12,11 +12,11 @@ const ResumeCard = ({ institute, title, duration, description }) => {
       {/* RIGHT SHORT DIV WITH TEXT. */}
       <div className="pt-6 pb-16 space-y-2   ">
         <h1 className="font-semibold text-xl">{title}</h1>
-        <p className="flex gap-2">
+        <div className="flex gap-2">
           <h2 className="">{institute}</h2>
           <span>/</span>
           <span className="text-sm">{duration}</span>
-        </p>
+        </div>
         <p className="text-xs">{description}</p>
       </div>
     </div>
