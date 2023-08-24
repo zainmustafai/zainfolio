@@ -33,8 +33,11 @@ const Sidenav = () => {
       <figure className="w-full aspect-square border-b dark:border-dark p-6">
         <Image
           src={profileImage}
-          alt="profile"
-          className="w-full  rounded-full border-8 dark:border-dark grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
+          alt="Picture of the author"
+          placeholder="blur"
+          style={{objectFit: "contain"}}
+          loading="lazy"
+          className="rounded-full border-8 w-full h-full dark:border-dark grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
         />
       </figure>
 

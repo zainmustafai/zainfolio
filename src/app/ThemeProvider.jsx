@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { ThemeProvider } from "next-themes";
 const Provider = ({ children }) => {
@@ -7,7 +8,7 @@ const Provider = ({ children }) => {
       attribute="class"
       enableColorScheme={false}
       defaultTheme="light"
-      enableSystem={true}
+      enableSystem={false}
     >
       {children}
     </ThemeProvider>
